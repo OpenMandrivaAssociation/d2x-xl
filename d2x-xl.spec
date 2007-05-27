@@ -3,7 +3,7 @@
 Summary:	%{Summary}
 Name:		d2x-xl
 Version:	1.9.9
-Release:	%mkrel 2
+Release:	%mkrel 3
 Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.bz2
 Patch2:		d2x-xl-ogl.patch
 URL:		http://www.descent2.de/
@@ -12,7 +12,7 @@ License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	automake SDL-devel dos2unix desktop-file-utils ImageMagick
 BuildRequires:	SDL_mixer-devel	mesagl-devel mesaglu-devel
-Requires:	timidity++
+Requires:	TiMidity++
 
 %description
 This is the port of Descent 2 Version 1.2, the famous 3D game for PC.
