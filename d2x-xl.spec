@@ -48,7 +48,6 @@ install -d %{buildroot}%{_gamesdatadir}/%{name}
 install -d %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=D2X-XL
 Comment=%{Summary}
 Exec=%{_gamesbindir}/%{name}
