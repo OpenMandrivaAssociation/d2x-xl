@@ -9,7 +9,6 @@ Patch2:		d2x-xl-ogl.patch
 URL:		http://www.descent2.de/
 Group:		Games/Arcade
 License:	GPL
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	automake SDL-devel dos2unix desktop-file-utils ImageMagick
 BuildRequires:	SDL_mixer-devel	mesagl-devel mesaglu-devel
 Requires:	TiMidity++
