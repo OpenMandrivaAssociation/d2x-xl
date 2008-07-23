@@ -3,7 +3,7 @@
 Summary:	%{Summary}
 Name:		d2x-xl
 Version:	1.9.9
-Release:	%mkrel 3
+Release:	%mkrel 5
 Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.bz2
 Patch2:		d2x-xl-ogl.patch
 URL:		http://www.descent2.de/
