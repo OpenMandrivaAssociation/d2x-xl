@@ -2,15 +2,23 @@
 
 Summary:	%{Summary}
 Name:		d2x-xl
-Version:	1.9.9
-Release:	%mkrel 5
-Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.bz2
-Patch2:		d2x-xl-ogl.patch
+Version:	1.13.53
+Release:	%mkrel 1
+# this is repacked tarball. step to produce it:
+# $ mkdir %name-%version && pushd %name-%version
+# $ wget http://nchc.dl.sourceforge.net/sourceforge/d2x-xl/d2x-xl-src-%version.rar
+# $ unrar d2x-xl-src-%version.rar
+# $ unrar d2x-xl-src-makefiles.rar
+# $ rm -f *.rar
+# $ popd
+# $ tar cfj %name-%version.tar.bz2 %name-%version
+Source0:	%{name}-%{version}.tar.bz2
+Patch5:         d2x-xl-alsadigi.patch
 URL:		http://www.descent2.de/
 Group:		Games/Arcade
-License:	GPL
+License:	GPLv2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	automake SDL-devel dos2unix desktop-file-utils ImageMagick
+BuildRequires:	automake SDL-devel dos2unix ImageMagick
 BuildRequires:	SDL_mixer-devel	mesagl-devel mesaglu-devel
 Requires:	TiMidity++
 
@@ -25,18 +33,19 @@ of Descent 2 Version 1.2 installed in %{_gamesdatadir}/%{name}
 
 %prep 
 %setup -q
-%patch2 -p0 -b .ogl
+%patch5 -p0 -b .alsadigi
 dos2unix -b `find -type f`
 
 %build
 aclocal
 autoheader
 autoconf
-automake --add-missing
+automake --add-missing --copy
 chmod +x configure
 chmod +x config.sub
 chmod +x missing
-%configure --bindir=%{_gamesbindir} --enable-release --with-opengl
+%configure2_5x --bindir=%{_gamesbindir} --enable-release --with-opengl \
+	 --disable-kalinix
 %make 
 
 %install
@@ -74,5 +83,3 @@ rm -rf %{buildroot}
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
-
-
