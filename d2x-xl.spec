@@ -18,7 +18,7 @@ URL:		http://www.descent2.de/
 Group:		Games/Arcade
 License:	GPLv2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	automake SDL-devel dos2unix ImageMagick
+BuildRequires:	automake SDL-devel dos2unix imagemagick
 BuildRequires:	SDL_mixer-devel	mesagl-devel mesaglu-devel
 Requires:	TiMidity++
 
