@@ -12,8 +12,8 @@ Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.bz2
 # Patch1:		d2x-xl-oof.patch
 # Patch2:		d2x-xl-ogl.patch
 # Patch3:		d2x-xl-vecmat.patch
-# Patch4:		d2x-xl-textdata.patch
-Patch5:			d2x-xl-alsadigi.patch
+Patch4:		d2x-xl-font-oden.patch
+Patch5:		d2x-xl-alsadigi.patch
 URL:		http://D2X-XL-engine.com/
 Group:		Games/Arcade
 License:	GPL
@@ -45,6 +45,7 @@ rm -f d2x-w32.ico d2x-xl-ico-32x32.gif d2x-xl-ico-64x64.gif d2x-xl.ico \
 # %patch3 -p0 -b .vecmat
 # %patch4 -p0 -b .textdata
 %patch5 -p0 -b .alsadigi
+%patch4 -p0 -b .font
 %build
 dos2unix -U -b *
 aclocal
