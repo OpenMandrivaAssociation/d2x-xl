@@ -36,7 +36,7 @@ automake --add-missing
 chmod +x configure
 chmod +x config.sub
 chmod +x missing
-%configure --bindir=%{_gamesbindir} --enable-release --with-opengl
+%configure2_5x --bindir=%{_gamesbindir} --enable-release --with-opengl
 %make 
 
 %install
