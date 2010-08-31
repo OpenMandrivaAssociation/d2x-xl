@@ -3,16 +3,16 @@
 
 Summary:	%{Summary}
 Name:		d2x-xl
-Version:	1.15.79
+Version:	1.15.87
 Release:	%mkrel 1
 Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.bz2
-Patch2:		d2x-xl-ogl.patch
+# Patch2:		d2x-xl-ogl.patch
 URL:		http://www.descent2.de/
 Group:		Games/Arcade
 License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	automake SDL-devel dos2unix desktop-file-utils ImageMagick
-BuildRequires:	SDL_mixer-devel	GL-devel SDL_image-devel
+BuildRequires:	SDL_mixer-devel	GL-devel
 Requires:	TiMidity++
 
 %description
@@ -36,7 +36,7 @@ automake --add-missing
 chmod +x configure
 chmod +x config.sub
 chmod +x missing
-%configure2_5x --bindir=%{_gamesbindir} --enable-release --with-opengl
+%configure --bindir=%{_gamesbindir} --enable-release --with-opengl
 %make 
 
 %install
