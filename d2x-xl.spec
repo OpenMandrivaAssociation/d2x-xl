@@ -13,6 +13,7 @@ License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	automake SDL-devel dos2unix desktop-file-utils ImageMagick
 BuildRequires:	SDL_mixer-devel	GL-devel glew-devel lesstif-devel
+BuildRequires:	libgomp-devel SDL_image-devel
 Requires:	TiMidity++
 
 %description
@@ -29,14 +30,7 @@ of Descent 2 Version 1.2 installed in %{_gamesdatadir}/%{name}
 dos2unix -b -U * 
 
 %build
-aclocal
-autoheader
-autoconf
-automake --add-missing
-chmod +x configure
-chmod +x config.sub
-chmod +x missing
-%configure --bindir=%{_gamesbindir} --enable-release --with-opengl
+%configure2_5x --bindir=%{_gamesbindir} --enable-release --with-opengl
 %make 
 
 %install
