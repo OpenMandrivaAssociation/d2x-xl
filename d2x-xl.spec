@@ -12,7 +12,7 @@ Group:		Games/Arcade
 License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	automake SDL-devel dos2unix desktop-file-utils ImageMagick
-BuildRequires:	SDL_mixer-devel	GL-devel
+BuildRequires:	SDL_mixer-devel	GL-devel glew-devel lesstif-devel
 Requires:	TiMidity++
 
 %description
