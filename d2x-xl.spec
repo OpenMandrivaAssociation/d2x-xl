@@ -3,7 +3,7 @@
 
 Summary:	%{Summary}
 Name:		d2x-xl
-Version:	1.15.125
+Version:	1.15.127
 Release:	%mkrel 1
 Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.bz2
 # Patch2:		d2x-xl-ogl.patch
@@ -30,6 +30,8 @@ of Descent 2 Version 1.2 installed in %{_gamesdatadir}/%{name}
 dos2unix -b -U * 
 
 %build
+autoreconf
+chmod +x configure
 %configure2_5x --bindir=%{_gamesbindir} --enable-release --with-opengl
 %make 
 
