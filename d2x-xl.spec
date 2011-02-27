@@ -6,6 +6,7 @@ Name:		d2x-xl
 Version:	1.15.130
 Release:	%mkrel 2
 Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.bz2
+Patch0:		d2x-xl-1.15.130-link.patch
 # Patch2:		d2x-xl-ogl.patch
 URL:		http://www.descent2.de/
 Group:		Games/Arcade
@@ -27,7 +28,8 @@ of Descent 2 Version 1.2 installed in %{_gamesdatadir}/%{name}
 
 %prep 
 %setup -q
-dos2unix -b -U * 
+%patch0 -p0
+find -type f|dos2unix -b -U 
 
 %build
 autoreconf
