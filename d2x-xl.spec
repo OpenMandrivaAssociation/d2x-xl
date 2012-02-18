@@ -12,7 +12,7 @@ URL:		http://www.descent2.de/
 Group:		Games/Arcade
 License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	automake SDL-devel dos2unix desktop-file-utils ImageMagick
+BuildRequires:	automake SDL-devel dos2unix desktop-file-utils imagemagick
 BuildRequires:	SDL_mixer-devel	GL-devel glew-devel lesstif-devel SDL_net-devel
 BuildRequires:	libgomp-devel SDL_image-devel curl-devel glibc-devel
 Requires:	TiMidity++
@@ -29,7 +29,6 @@ of Descent 2 Version 1.2 installed in %{_gamesdatadir}/%{name}
 %prep 
 %setup -q
 %patch0 -p0
-find -type f|dos2unix -b -U 
 
 %build
 autoreconf
