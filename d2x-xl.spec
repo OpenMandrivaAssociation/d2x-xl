@@ -4,7 +4,7 @@
 Summary:	%{Summary}
 Name:		d2x-xl
 Version:	1.15.341
-Release:	2
+Release:	3
 Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.xz
 Patch0:		d2x-xl-1.15.130-link.patch
 # Patch2:		d2x-xl-ogl.patch
