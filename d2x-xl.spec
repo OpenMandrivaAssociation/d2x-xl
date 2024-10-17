@@ -8,7 +8,7 @@ Release:	3
 Source0:	http://www.descent2.de/resources/%{name}-%{version}.tar.xz
 Patch0:		d2x-xl-1.15.130-link.patch
 # Patch2:		d2x-xl-ogl.patch
-URL:		http://www.descent2.de/
+URL:		https://www.descent2.de/
 Group:		Games/Arcade
 License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
